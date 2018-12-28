@@ -1,9 +1,11 @@
 export class User {
-  public id: number;
-  public name: string;
+  public ID: number;
+  public UserName: string;
+  public Password: string;
 
   constructor(data?) {
-    this.id = data && data.id ? data.id : null;
-    this.name = data && data.name ? data.name : null;
+    this.ID = data && data.ID ? data.ID : null;
+    this.UserName = data && data.UserName ? data.UserName : null;
+    this.Password = data && data.Password ? data.Password : null;
   }
 }

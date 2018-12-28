@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api_url: '/foo/bar/dev'
+  api_url: 'https://fakerestapi.azurewebsites.net/api'
 };
 
 /*

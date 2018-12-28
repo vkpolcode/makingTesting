@@ -18,7 +18,7 @@ export class ApiService {
     return this.request(path, 'delete', options);
   }
 
-  public get<T>(path: string, options?: any): Observable<T> {
+  public get(path: string, options?: any): Observable<any> {
     return this.request(path, 'get', options);
   }
 
@@ -36,15 +36,8 @@ export class ApiService {
 
   private request<T>(path: string, method: string, options?: any): Observable<any> {
     options = options || {};
-    const headers = new HttpHeaders()
-      .set('Content-Type', 'application/json')
-      .set('Accept', 'application/json');
-    const requestOptions = Object.assign(
-      options, {
-        headers: headers
-      }, {
-        observe: 'response'
-      });
+    const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Accept', 'application/json');
+    const requestOptions = Object.assign(options, {headers: headers}, {observe: 'response'});
     return this.http.request(method, `${this.baseUrl}${path}`, requestOptions);
   }
 }
